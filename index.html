@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sliding Menu Indicator</title>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <nav>
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">Team</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+      <div id="maker"></div>
+   </nav>
+
+   <script>
+      let maker = document.querySelector('#maker');
+      let item = document.querySelectorAll("nav a")
+
+      function indicator(e) {
+         maker.style.left = e.offsetLeft+'px';
+         maker.style.width = e.offsetWidth+'px'
+      }
+
+      item.forEach(link => {
+         link.addEventListener('click',(e) =>{
+            indicator(e.target)
+         })
+      })
+   </script>
+</body>
+</html>
